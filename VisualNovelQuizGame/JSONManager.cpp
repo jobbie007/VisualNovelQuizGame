@@ -243,7 +243,7 @@ public:
 
 
                     // <<<< PAUSE POINT >>>>
-                    // In a real game loop:
+                    // In a real game loop:s
                     // 1. This function (`processEvents` or a stateful equivalent) would return/yield here.
                     // 2. The main loop calls `renderCurrentScene(windowRef)` to draw sprites.
                     // 3. The main loop draws the dialogue text (`speaker`, `line`) onto the window.
