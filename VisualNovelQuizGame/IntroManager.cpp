@@ -1,15 +1,13 @@
-#include "JSONManager.cpp"
-#include <SFML/Graphics.hpp>
+// IntroManager.cpp
+#include "IntroManager.h"
+#include "JSONManager.h"
 
-class IntroManager {
-private:
-    sf::RenderWindow& window;
+IntroManager::IntroManager(sf::RenderWindow& win)
+    : window(win) {
+}
 
-public:
-    IntroManager(sf::RenderWindow& win) : window(win) {}
-
-    void run() {
-        JSONManager intro(window, "Assets/Jsons/Intro/Intro.json");
-        intro.run();
-    }
-};
+void IntroManager::run() {
+    // Make sure this path matches where you put DialogueTest.json
+    JSONManager manager(window, "Assets/Jsons/DialogueTest.json");
+    manager.run();
+}

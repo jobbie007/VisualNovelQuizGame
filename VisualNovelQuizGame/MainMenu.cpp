@@ -1,22 +1,23 @@
-#include "GameManager.cpp"  // Correctly include the header, not the .cpp
+// main.cpp
 #include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-#include <iostream>
-#include <fstream>
-#include <nlohmann/json.hpp>
-#include <cstdlib>
-#include <ctime>
-
-const int WIN_WIDTH = 1280;
-const int WIN_HEIGHT = 720;
+#include "JSONManager.h"
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT), "Visual Novel");
+    // Create window
+    sf::RenderWindow window(sf::VideoMode(1280, 720), "Visual Novel");
 
-    std::srand(static_cast<unsigned>(std::time(nullptr)));
+    // Initialize JSONManager with your script path
+    JSONManager manager(window, "Assets/Jsons/DialogueTest.json");
+    manager.run();  // Play through dialogue (Space advances)
 
-    GameManager manager(window);
-    manager.run();
-
+    // After run() completes, keep displaying the last frame
+    sf::Event evt;
+    while (window.isOpen()) {
+        while (window.pollEvent(evt)) {
+            if (evt.type == sf::Event::Closed)
+                window.close();
+        }
+        manager.drawCurrentFrame();
+    }
     return 0;
 }

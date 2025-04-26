@@ -1,18 +1,14 @@
+// GameManager.hpp
 #pragma once
+
 #include <SFML/Graphics.hpp>
-#include <memory>
 #include "IntroManager.h"
-#include "StageOneManager.h"
 
 class GameManager {
 public:
-    GameManager(sf::RenderWindow& window);
-    ~GameManager();
-
+    explicit GameManager(sf::RenderWindow& win);
     void run();
 
 private:
-    sf::RenderWindow& window_;
-    std::unique_ptr<IntroManager> intro_manager_;
-    std::unique_ptr<StageOneManager> stage_one_manager_;
-}; 
+    sf::RenderWindow& window;
+};

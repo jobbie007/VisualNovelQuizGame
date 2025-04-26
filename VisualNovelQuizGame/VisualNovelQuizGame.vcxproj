@@ -143,18 +143,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ChoiceTypeManager.cpp" />
-    <ClCompile Include="DialogueTypeManager.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="IntroManager.cpp" />
     <ClCompile Include="JSONManager.cpp" />
     <ClCompile Include="MainMenu.cpp" />
-    <ClCompile Include="QuizTypeManager.cpp" />
     <ClCompile Include="RhythmGame.cpp" />
-    <ClCompile Include="StageOneManager.cpp" />
-    <ClCompile Include="StageThreeManager.cpp" />
-    <ClCompile Include="StageTwoManager.cpp" />
-    <ClCompile Include="VisualsManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="IntroManager.h" />
+    <ClInclude Include="JSONManager.h" />
+    <ClInclude Include="RhythmGame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
